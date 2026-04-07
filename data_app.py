@@ -3,9 +3,17 @@ import pandas as pd
 from groq import Groq
 import matplotlib.pyplot as plt
 import seaborn as sns
+from dotenv import load_dotenv # Naya import
+import os
 
-# 1. API Client Setup
-client = Groq(api_key="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")
+# .env file se variables load karein
+load_dotenv()
+
+# API Key ab environment se uhtayi jayegi
+api_key = os.getenv("GROQ_API_KEY")
+client = Groq(api_key=api_key)
+
+# Baqi sara code waisa hi rahega...
 
 st.set_page_config(page_title="AI Data Analyst Pro", layout="wide", page_icon="📊")
 
